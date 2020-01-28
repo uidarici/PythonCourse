@@ -1,1 +1,52 @@
+Exercise 0: 
+Python is set, Atom.io and Python seem working properly and I could use them. Here what I got,
 
+PS C:\Users\udarici19> python
+Python 3.6.0 (v3.6.0:41df79263a11, Dec 23 2016, 07:18:10) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit ()
+PS C:\Users\udarici19> mkdir ilker
+
+
+    Directory: C:\Users\udarici19
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        1/29/2020   1:08 AM                ilker
+
+
+PS C:\Users\udarici19> cd ilker
+PS C:\Users\udarici19\ilker> dir
+
+
+    Directory: C:\Users\udarici19\ilker
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        1/29/2020   1:09 AM              0 test.txt
+
+
+PS C:\Users\udarici19\ilker>
+
+Exercise 1:
+Having written the same sentences in the example and run it on the terminal, I got the following:
+PS C:\Users\udarici19\ilker> python ex1.py
+Hello World!
+Hello Again
+I like typing this.
+This is fun.
+Yay! Printing.
+I'd much rather you 'not'.
+I "said" do not touch this.
+PS C:\Users\udarici19\ilker>
+
+Exercise 2: 
+This exercise focuses on the "#" sign, which ignores the text after it and had no problem with it
+
+PS C:\Users\udarici19> cd github
+PS C:\Users\udarici19\github> python ex2.py
+I could have done like this.
+This will run.
+PS C:\Users\udarici19\github>
