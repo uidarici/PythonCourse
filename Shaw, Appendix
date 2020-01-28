@@ -1,0 +1,79 @@
+"PowerShell is used to enter commands" 
+
+pwd - print working memory
+hostname - my computer's network name
+mkdir - make directory
+cd - change directory
+ls - list directory
+rmdir - remove directory
+pushd - push directory
+popd - pop directory
+cp - copy a file or directory
+robocopy - robust copy
+mv - move a file or directory
+more - page through a file
+type - print the whole file
+forfiles - run a command on lots of files
+dir -r - find files
+select-string - find things inside files
+help - read a manual page
+helpctr - find what man page is appropriate
+echo - print some arguments
+set - export/set a new environment variable
+exit - exit the shell
+runas - DANGER!
+
+pwd - to understand where you are currently
+
+pwd & cd ~ - do this when you are lost, takes you to the beginning
+
+mkdir temp
+mkdir temp/stuff/things/orange/apple/pear/grape - create new folders
+mkdir "I Have Fun"
+
+cd temp
+ls - list directory
+
+I could not run the "rmdir" command !! (solved: wrote the command, after temp)
+
+pushd "save where I am, then go here"
+popd "take me back"
+
+New-Item name.txt -type file -- creating new file (not folder but item)
+
+""copying a file"" 
+cp iamcook.txt neat.txt
+ls
+cp neat.txt awesome.txt
+ls
+cp awesome.txt thefourthfile.txt
+ls
+mkdir something
+cp awesome.txt something/
+ls
+ls something
+cp -recurse something newplace
+ls newplace
+
+"" moving a file"
+cd temp
+mv awesome.txt uncool.txt
+ls
+mv newplace oldplace
+ls
+mv oldplace newplace
+ls newplace
+ls
+
+more -- to view a file !!!!
+
+""""""Stream a File (cat)"""""""""""""
+""""I dont understand cat command!!"""""""""
+
+"Removing a File"
+rm name.txt(extension)
+
+to exit -- exit
+
+
+
