@@ -1,4 +1,4 @@
-Exercise 0: 
+*** Exercise 0: 
 Python is set, Atom.io and Python seem working properly and I could use them. Here what I got,
 
 PS C:\Users\udarici19> python
@@ -30,7 +30,7 @@ Mode                LastWriteTime         Length Name
 
 PS C:\Users\udarici19\ilker>
 
-Exercise 1:
+*** Exercise 1:
 
 Having written the same sentences in the example and run it on the terminal, I got the following:
 PS C:\Users\udarici19\ilker> python ex1.py
@@ -43,7 +43,7 @@ I'd much rather you 'not'.
 I "said" do not touch this.
 PS C:\Users\udarici19\ilker>
 
-Exercise 2: 
+*** Exercise 2: 
 
 This exercise focuses on the "#" sign, which ignores the text after it and had no problem with it
 
@@ -53,7 +53,7 @@ I could have done like this.
 This will run.
 PS C:\Users\udarici19\github>
 
-Exercise 3:
+*** Exercise 3:
 
 PS C:\Users\udarici19> cd github
 PS C:\Users\udarici19\github> python ex3.py
@@ -72,7 +72,7 @@ Is it greater? True
 Is it greater or equal? True
 Is it less or equal? False
 
-Exercise 4: Variables and Names
+*** Exercise 4: Variables and Names
 
 cars = 100
 space_in_a_car = 4.0
@@ -100,7 +100,7 @@ We have 90 to carpool today.
 We need to put about 3.0 in each car.
 PS C:\Users\udarici19\github>
 
-Exercise 5: More Variables and Printing
+*** Exercise 5: More Variables and Printing
 
 my_name = 'U. Ilker Darıcı'
 my_age = 240 # not a lie
@@ -131,7 +131,7 @@ If I add 240, 123, and 193, I get 556.
 
 Question_1:  couldn't get what is different from ex5 in this example. For What "f" is used?
 
-Exercise 6: Strings and Text
+*** Exercise 6: Strings and Text
 
 types_of_people = 10
 x = f"There are {types_of_people} types of people."
@@ -164,7 +164,7 @@ I also said: 'Those who know binary and those who don't.'
 Isn't that joke so funny?! False
 This is the left side of...a string with a right side.
 
-Exercise 7: More Printing
+*** Exercise 7: More Printing
 
 print ("Mary had a little lam.")
 print ("Its fleece was white as {}.".format ('snow'))
@@ -194,7 +194,7 @@ And everywhere that Mary went.
 ..........
 Cheese Burger
 
-Exercise 8: Printing 
+*** Exercise 8: Printing 
 
 formatter = "{} {} {} {}"
 
@@ -211,7 +211,7 @@ True False False True
 {} {} {} {} {} {} {} {} {} {} {} {} {} {} {} {}
 Seheryeli Bizim ele gidersen Nazlı yare küstüğümü Söyleme.
 
-Exercise 9: Printing
+*** Exercise 9: Printing
 
 days = "Mon Tue Wed Thu Fri Sat Sun"
 months = "Jan\nFeb\nMar\nApr\nMay\nJun\nJul\nAug"
@@ -241,7 +241,7 @@ Yokluğun yok ediyor
 Durmuyor deli yüreğim
 Durmuyor deli yüreğim
 
-exercise 10: What Was That?
+*** Exercise 10: What Was That?
 
 This \ (backslash) character encodes difficult-to-type characters into a string. It prevent Python to get confused, necessary if u use 2 or more " in a line!!
 
@@ -272,6 +272,93 @@ I'll do a list:
         * Fishies
         * Catnip
         * Grass
+
+*** Exercise 11: Asking Questions
+
+print("How old are you?", end=' ')
+age = input()
+print("How tall are you?", end=' ')
+height = input()
+print("How much do you weigh?", end=' ')
+weight = input()
+
+print(f"So, you're {age} old, {height} tall and {weight} heavy.")
+
+PS C:\Users\udarici19\github> python ex11.py
+How old are you? 24
+How tall are you? 173cm
+How much do you weigh? 77.4kg
+So, you're 24 old, 173cm tall and 77.4kg heavy.
+
+-> u're writing the input on the terminal!!!! 
+
+*** Exercise 12: Prompting People
+
+age = input("How old are you? ")
+height = input("How tal are you? ")
+weight = input("How much do you weigh? ")
+
+print (f"So, you're {age} old, {height} tall and {weight} heavy")
+
+PS C:\Users\udarici19\github> python ex12.py
+How old are you? 13
+How tal are you? 14
+How much do you weigh? 15
+So, you're 13 old, 14 tall and 15 heavy
+
+*** Exercise 13: Parameters, Unpacking, Variables
+
+from sys import argv
+
+script, first, second, third = argv
+
+print("The script is called:", script)
+print("Your first variable is:", first)
+print("Your second variable is:", second)
+print("Your third variable is:", third)
+
+PS C:\Users\udarici19\github> python ex13.py first 2nd 3rd
+The script is called: ex13.py
+Your first variable is: first
+Your second variable is: 2nd
+Your third variable is: 3rd
+PS C:\Users\udarici19\github> python ex13.py ilker soner türker
+The script is called: ex13.py
+Your first variable is: ilker
+Your second variable is: soner
+Your third variable is: türker
+PS C:\Users\udarici19\github> python ex13.py osman ceran nafiz
+The script is called: ex13.py
+Your first variable is: osman
+Your second variable is: ceran
+Your third variable is: nafiz
+
+*** Extra: Combination of Ex 12 & Ex 13
+
+from sys import argv
+
+script, age, height, weight = argv
+
+age = input("How old are you? ")
+height = input("How tal are you? ")
+weight = input("How much do you weigh? ")
+
+print("The script is called:", script)
+print("Your age is:", age)
+print("Your height is:", height)
+print("Your weight is:", weight)
+
+print (f"So, you're {age} old, {height} tall and {weight} heavy")
+
+PS C:\Users\udarici19\github> python ad.py age height weight
+How old are you? 13
+How tal are you? 14
+How much do you weigh? 15
+The script is called: ad.py
+Your age is: 13
+Your height is: 14
+Your weight is: 15
+So, you're 13 old, 14 tall and 15 heavy
 
 
 
