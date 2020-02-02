@@ -1,0 +1,95 @@
+***Exercise 16: Reading and Writin Files
+
+from sys import argv
+
+script, filename = argv
+
+print(f"We're going to erase {filename}.")
+print("If you don't want that, hit CTRL-C (^C).")
+print("If you do want that, hit RETURN")
+
+input("?")
+
+print("Opening the file...")
+target = open(filename, 'w')
+
+print("Truncating the file. Goodbye!")
+target.truncate()
+
+print("Now I'm going to ask you for three lines.")
+
+line1 = input("line 1: ")
+line2 = input("line 2: ")
+line3 = input("line 3: ")
+
+print("I'm going to write these to the file.")
+
+target.write(line1)
+target.write("\n")
+target.write(line2)
+target.write("\n")
+target.write(line3)
+target.write("\n")
+
+print("And finally, we close it.")
+target.close()
+
+PS C:\Users\udarici19\github> python ex16.py test.txt
+We're going to erase test.txt.
+If you don't want that, hit CTRL-C (^C).
+If you do want that, hit RETURN
+?
+Opening the file...
+Truncating the file. Goodbye!
+Now I'm going to ask you for three lines.
+line 1: merhaba
+line 2: dünya
+line 3: ilker geldi
+I'm going to write these to the file.
+And finally, we close it.
+
+***Exercise 17: More Files
+
+Using import is a way to get tons of free code other better (well, usually) programmers have written so you do not have to write it. 
+
+from sys import argv
+from os.path import exists
+
+script, from_file, to_file = argv
+
+print(f"Cpoying from {from_file} to {to_file}")
+
+in_file = open(from_file)
+indata = in_file.read()
+
+print(f"The input file is {len(indata)} bytes long")
+
+print(f"Does the output file exists? {exists(to_file)}")
+print("Ready, hit RETURN to continue, CTRL-C to abort")
+input()
+
+out_file = open(to_file, 'w')
+out_file.write(indata)
+
+print("Alrigt, all done.")
+
+out_file.close()
+in_file.close()
+
+PS C:\Users\udarici19\github> echo "This is a test file." > test.txt
+PS C:\Users\udarici19\github> cat test.txt
+This is a test file.
+PS C:\Users\udarici19\github> python ex17.py test.txt new_file.txt
+Cpoying from test.txt to new_file.txt
+The input file is 46 bytes long
+Does the output file exists? False
+Ready, hit RETURN to continue, CTRL-C to abort
+
+Alrigt, all done.
+
+***Exercise 18: Names, Variables, Code, Functions
+
+
+
+
+
