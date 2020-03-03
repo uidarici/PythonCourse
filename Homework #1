@@ -1,0 +1,99 @@
+import random
+
+class Portfolio():
+    def __init__ (self):
+        self.cash = 0
+        self.stockInv = []
+        self.mfInv = []
+        self.h_list = []
+
+    def addCash(self, num):
+        self.cash += num
+        self.h_list.append(f"Here comes the money!: {num}")
+
+    def buyStock(self, num, stock):
+        if self.cash >= num * stock.price:
+            stock.share_bought += num
+            if stock in self.stockInv:
+                self.stockInv.remove(stock)
+            self.stockInv.append(stock)
+            self.cash -= num * stock.price
+            self.h_list.append(f"Bought {num} shares of {stock.stock_name}")
+        else:
+            print ("No Money, No Honey!")
+
+    def buyMutualFund(self, num, mf):
+        if self.cash >= num:
+            mf.share_bought += num
+            if mf in self.mfInv:
+                self.mfInv.remove(mf)
+            self.mfInv.append(mf)
+            self.cash -= num * 1
+            self.h_list.append (f"Bought {num} shares of {mf.mf_name}")
+        else:
+            print ("No Money, No Honey!")
+
+    def sellMutualFund(self, mf_name, num):
+        rand_fr = random.randrange(90, 120, 10)
+        rand_fr = rand_fr / 100
+        for mf in self.mfInv:
+            if mf.mf_name == mf_name:
+                mf.share_bought -= num
+                self.cash += num * rand_fr
+                self.h_list.append (f"Sold {num} shares of {mf.mf_name} for {num*rand_fr}")
+
+    def sellStock(self, stock_name, num):
+        rand_fr = random.randrange(50, 150, 10)
+        rand_fr = rand_fr / 100
+        for stock in self.stockInv:
+            if stock.stock_name == stock_name:
+                stock.share_bought -= num
+                self.cash += num * rand_fr * stock.price
+                self.h_list.append (f"Sold {num} shares of {stock.stock_name} for {num*rand_fr*stock.price}")
+
+    def withdrawCash(self, num):
+        if self.cash >= num:
+            self.cash -= num
+            self.h_list.append(f"Here goes the money!: {num}")
+        else:
+            print ("No Money, No Honey!")
+
+    def __str__(self):
+        stocks = " "
+        mutuals = " "
+        for stock in self.stockInv:
+            stocks += (f"\n{stock.share_bought} {stock.stock_name}")
+        for mutual in self.mfInv:
+            mutuals += (f"\n{mutual.share_bought} {mutual.mf_name}")
+
+        prt_str = (f"\nCash:\n{self.cash}\nStocks:{stocks}\nMutual Funds:{mutuals}")
+        return str(prt_str)
+
+    def history(self):
+        for transaction in self.h_list:
+            print(transaction)
+
+class Stock():
+    def __init__ (self, price, stock_name):
+        self.price = price
+        self.stock_name = stock_name
+        self.share_bought = 0
+
+class MutualFund():
+    def __init__ (self, mf_name):
+        self.mf_name = mf_name
+        self.share_bought = 0
+
+portfolio = Portfolio()
+portfolio.addCash(300.50)
+s = Stock(20, "HFH")
+portfolio.buyStock(5, s)
+mf1 = MutualFund("BRT")
+mf2 = MutualFund("GHT")
+portfolio.buyMutualFund(10.3, mf1)
+portfolio.buyMutualFund(2, mf2)
+portfolio.sellMutualFund("BRT", 3)
+portfolio.sellStock("HFH", 1)
+portfolio.withdrawCash(50)
+portfolio.history()
+print(portfolio)
