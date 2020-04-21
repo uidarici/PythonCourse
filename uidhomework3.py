@@ -49,7 +49,7 @@ parameters {
   real<lower=0,upper=100> sigma_a2;
   real<lower=0,upper=100> sigma_y;
 }
-transformed parameters {
+transformed_parameters {
   vector[N] y_hat;
   for (i in 1:N)
      y_hat[i] = alpha + a1[country[i]] + a2[year[i]] + x1[i]*b[1] + x2*b[2];
@@ -68,9 +68,9 @@ model {
 
 model_one_data = {'N': len(religiosity),
                  'J1': len(countries),
-		         'J2': len(year),
+		 'J2': len(year),
                  'country': countries + 1,
-	             'year': year + 1,
+	         'year': year + 1,
                  'x1': inequality,
                  'x2': rgdpl,
                  'y': religiosity}
@@ -104,7 +104,7 @@ parameters {
   real<lower=0,upper=100> sigma_a2;
   real<lower=0,upper=100> sigma_y;
 }
-transformed parameters {
+transformed_parameters {
   vector[N] y_hat;
   for (i in 1:N)
  y_hat[i] = alpha + a1[country[i]] + a2[year[i]] + x1[i]*b[1] + x2*b[2];
@@ -123,7 +123,7 @@ model {
 
 model_two_data = {'N': len(religiosity),
                  'J1': len(countries),
-		         'J2': len(year),
+		 'J2': len(year),
                  'country': countries + 1,
                  'x1': inequality,
                  'x2': rgdpl,
