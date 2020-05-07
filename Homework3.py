@@ -56,10 +56,10 @@ transformed parameters {
       y_hat = alpha + a1[country[i]] + a2[year[i]] + x1[i]*b[1] + x2*b[2];
 }
 model {
-  sigma_a1 ~ normal(0, 100);
-  a1 ~ normal(mu_a1, sigma_a1);
-  sigma_a2 ~ normal(0, 100);
-  a2 ~ normal(mu_a2, sigma_a2);
+  sigma_a1 ~ uniform(0, 100);
+  a1 ~ uniform(mu_a1, sigma_a1);
+  sigma_a2 ~ uniform(0, 100);
+  a2 ~ uniform(mu_a2, sigma_a2);
   b ~ normal(0,1);
   sigma_y ~ uniform(0, 100);
   y ~ normal(y_hat, sigma_y);
@@ -78,7 +78,7 @@ model_one_data = {'N': len(religiosity),
                  'x2': rgdpl,
                  'y': religiosity}
 
-model_one_fit = pystan.stan(model_code=model_one, data=model_one_data, iter=100, chains=2)
+model_one_fit = pystan.stan(model_code=model_one, data=model_one_data, iter=1000, chains=2)
 
 a_sample = pd.DataFrame(model_one_fit['a'])
 
