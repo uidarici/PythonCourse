@@ -7,6 +7,7 @@ import numpy as np
 
 data = pd.read_csv('trend2.csv')
 data = data.dropna()
+year = data.year
 
 countries = data.country.str.strip()
 unique_countries = countries.unique()
@@ -67,10 +68,10 @@ model {
 """
 
 model_one_data = {'N': len(religiosity),
-                 'J1': len(countries),
-		 'J2': len(year),
+                 'J1': len(np.unique(countries)),
+'J2': len(np.unique(year)),
                  'country': countries + 1,
-	         'year': year + 1,
+        'year': year + 1,
                  'x1': inequality,
                  'x2': rgdpl,
                  'y': religiosity}
